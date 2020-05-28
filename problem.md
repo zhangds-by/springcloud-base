@@ -7,5 +7,14 @@ eureka
     只有@loadBalance注解修饰的restTemplate才能实现服务名的调用，设置负载均衡之后才能在多个服务提供者调用服务
     
     
+consul
+    
+    注册列表中，critical报错
+    加上 spring.cloud.consul.discovery.heartbeat.enabled=true 配置
+    
+服务调用ribbon + 远程调用RestTemplate
+
+    远程调用路径错误 ：
+        org.springframework.web.client.HttpClientErrorException$NotFound: 404
 
     

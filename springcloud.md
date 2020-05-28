@@ -47,10 +47,17 @@ springcloud架构
 		Zookeeper
 		Consul
 		Nacos 推荐
-	服务调用
+		
+	负载均衡和服务调用
 		Ribbon：负责进行客户端负载均衡的组件；一般与RestTemplate结合
-		        用于服务调用者向被调用者进行服务调用，并且如果服务者有多个节点时，会进行客户端的负载均衡处理
+		    用于服务调用者向被调用者进行服务调用，并且如果服务者有多个节点时，会进行客户端的负载均衡处理
+		    
+		    RestTemplate：getForObject方法为响应体中数据转化成的对象，基本上可以理解为Json。
+                         getForEntity方法返回对象为ResponseEntity对象，包含响应中一些重要的信息，比如响应头、响应状态码、响应体等。
+		       
+            Ribbon 负载算法 IRule 
 		LoadBalancer
+		
 	服务调用
 		Feign
 		OpenFeign
