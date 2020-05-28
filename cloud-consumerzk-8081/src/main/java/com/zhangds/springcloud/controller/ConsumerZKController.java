@@ -16,12 +16,12 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("consumer")
 public class ConsumerZKController {
 
-    public static final String INVOKE_URL = "http://cloud-provider-service";
+    public static final String INVOKE_URL = "http://cloud-providerzk-service";
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/payment/zk")
+    @GetMapping("/zk")
     public String getZkInfo(){
         return restTemplate.getForObject(INVOKE_URL + "/payment/zk", String.class);
     }

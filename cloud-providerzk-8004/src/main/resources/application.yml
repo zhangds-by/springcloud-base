@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-provider-service #以别名的方式注册到Eureka
+    name: cloud-providerzk-service #以别名的方式注册到Eureka
 
   cloud:
     zookeeper:
