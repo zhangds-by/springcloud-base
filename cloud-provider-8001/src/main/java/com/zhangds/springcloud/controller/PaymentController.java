@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
  **/
 @RestController
 @Slf4j
-@RequestMapping("payment")
+@RequestMapping("provider")
 public class PaymentController {
 
     @Autowired
@@ -33,13 +34,13 @@ public class PaymentController {
     @Value("${server.port}")
     private String port;
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         return new CommonResult(200, port + "服务提供者OK", payment);
     }
 
-    @GetMapping("/discovery")
+    @GetMapping("/payment/discovery")
     public Object discovery(){
         List<String> services = discoveryClient.getServices();
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PROVIDER-SERVICE");
@@ -48,4 +49,10 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return port;
+    }
+
 }

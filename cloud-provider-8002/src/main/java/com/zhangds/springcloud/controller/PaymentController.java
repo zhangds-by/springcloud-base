@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 2020-05-19 18:35
  **/
 @RestController
-@RequestMapping("payment")
+@RequestMapping("provider")
 public class PaymentController {
 
     @Autowired
@@ -25,9 +25,14 @@ public class PaymentController {
     @Value("${server.port}")
     private String port;
 
-    @GetMapping(value = "/get/{id}")
+    @GetMapping(value = "/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         return new CommonResult(200, port + "服务提供者OK", payment);
+    }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return port;
     }
 }
