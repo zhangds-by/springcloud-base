@@ -17,4 +17,7 @@ consul
     远程调用路径错误 ：
         org.springframework.web.client.HttpClientErrorException$NotFound: 404
 
+Feign & openFeign
+
+    feign.FeignException$NotFound: status 404 reading PaymentService#getPaymentById(Long)
     
