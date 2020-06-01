@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * openFeign = feign + springMVC注解
@@ -16,8 +17,12 @@ import org.springframework.web.bind.annotation.PathVariable;
  **/
 @Component
 @FeignClient(value = "CLOUD-PROVIDER-SERVICE")
+@RequestMapping("provider")
 public interface PaymentService {
 
-    @GetMapping(value = "/provider/payment/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+    @GetMapping(value = "/payment/get/{id}")
+    CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+
+    @GetMapping("/payment/feign/timeout")
+    String paymentFeignTimeout();
 }

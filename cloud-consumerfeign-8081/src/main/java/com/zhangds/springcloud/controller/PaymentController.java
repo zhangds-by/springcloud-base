@@ -14,13 +14,20 @@ import org.springframework.web.bind.annotation.RestController;
  * 2020-05-28 20:09
  **/
 @RestController
+@RequestMapping("consumer")
 public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping("/consumer/payment/get/{id}")
+    @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable Long id){
         return paymentService.getPaymentById(id);
     }
+
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        return paymentService.paymentFeignTimeout();
+    }
+
 }

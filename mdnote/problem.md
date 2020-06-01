@@ -20,4 +20,4 @@ consul
 Feign & openFeign
 
     feign.FeignException$NotFound: status 404 reading PaymentService#getPaymentById(Long)
-    
+    feignClient接口配置的是 服务提供者的路径

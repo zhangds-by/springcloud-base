@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Create by zhangds
@@ -52,6 +53,21 @@ public class PaymentController {
 
     @GetMapping("/payment/lb")
     public String getPaymentLB(){
+        return port;
+    }
+
+    /**
+     * openFeign 超时控制
+     * @return
+     */
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            //openFeign 默认等待超时1s
+            TimeUnit.SECONDS.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return port;
     }
 
