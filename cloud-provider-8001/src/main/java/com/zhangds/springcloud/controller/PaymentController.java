@@ -64,9 +64,9 @@ public class PaymentController {
     public String paymentFeignTimeout(){
         try {
             //openFeign 默认等待超时1s
-            TimeUnit.SECONDS.sleep(3000);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            return "port" + port + "超时了";
         }
         return port;
     }

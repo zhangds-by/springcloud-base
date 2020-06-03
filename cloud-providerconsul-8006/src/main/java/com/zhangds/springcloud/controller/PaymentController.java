@@ -20,7 +20,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String port;
 
-    @GetMapping("/consul")
+    @GetMapping("/feign")
     public String paymentConsulInfo(){
         return "success" + port + UUID.randomUUID().toString();
     }

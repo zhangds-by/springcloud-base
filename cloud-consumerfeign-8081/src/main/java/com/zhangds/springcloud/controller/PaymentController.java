@@ -25,6 +25,7 @@ public class PaymentController {
         return paymentService.getPaymentById(id);
     }
 
+    //java.net.SocketTimeoutException: Read timed out
     @GetMapping("/payment/feign/timeout")
     public String paymentFeignTimeout(){
         return paymentService.paymentFeignTimeout();

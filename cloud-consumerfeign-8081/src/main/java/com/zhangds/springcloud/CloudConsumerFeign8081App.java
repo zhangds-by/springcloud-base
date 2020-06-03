@@ -19,8 +19,7 @@ public class CloudConsumerFeign8081App {
     }
 
     @Bean
-    Logger.Level feignLoggerLevel()
-    {
+    Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
     }
 }
