@@ -1,0 +1,14 @@
+server:
+  port: 8008
+
+spring:
+  application:
+    name: cloud-provider-hystrix
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-7001.com:7001/eureka # 单机
+      # defaultZone: http://eureka-7001.com:7001/eureka, http://eureka-7002.com:7001/eureka # 集群

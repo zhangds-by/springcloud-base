@@ -63,6 +63,11 @@ springcloud架构
 		OpenFeign
 	服务降级
 		Hystrix
+		    处理分布式系统延迟和容错，避免级联故障
+		    服务降级：返回友好提示 fallback （异常、熔断触发降级、超时、线程池/信号量打满）
+		    熔断：达到最大访问量时，拒绝访问（降级 -> 熔断 -> 恢复调用链路）
+		    限流：
+		    实时监控：
 		resilience4j 国外使用多
 		alibaba Sentinel 国内使用多
 	服务网关
