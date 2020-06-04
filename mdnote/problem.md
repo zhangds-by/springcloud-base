@@ -17,4 +17,11 @@ consul
     远程调用路径错误 ：
         org.springframework.web.client.HttpClientErrorException$NotFound: 404
 
+Feign & openFeign
+
+    feign.FeignException$NotFound: status 404 reading PaymentService#getPaymentById(Long)
+    feignClient接口配置的是 服务提供者的路径
+    
+    PathVariable annotation was empty on param 0
+    Feign远程服务需要显式指定参数名称 : @PathVariable(value = "id") Integer id
     
