@@ -23,3 +23,8 @@ ribbon:
   ReadTimeout: 5000
   #指的是建立连接后从服务器读取到可用资源所用的时间
   ConnectTimeout: 5000
+
+# 自定义提示信息生效 PaymentFallbackService
+feign:
+  hystrix:
+    enabled: true

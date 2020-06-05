@@ -19,6 +19,7 @@
         <module>cloud-consumerfeign-8081</module>
         <module>cloud-provider-hystrix-8008</module>
         <module>cloud-cousumer-hystrix-8081</module>
+        <module>cloud-consumer-hystrix-dashboard9001</module>
     </modules>
     <name>springcloud-base</name>
     <description>Demo project for Spring cloud</description>
@@ -103,6 +104,11 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.2.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

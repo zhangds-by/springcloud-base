@@ -25,3 +25,15 @@ Feign & openFeign
     PathVariable annotation was empty on param 0
     Feign远程服务需要显式指定参数名称 : @PathVariable(value = "id") Integer id
     
+Hystrix 
+
+    com.zhangds.springcloud.service.PaymentService#paymentOK(Integer)
+    to {GET /provider/payment/hystrix/ok/{id}}: There is already 'paymentFallbackService' bean method
+    com.zhangds.springcloud.service.PaymentFallbackService#paymentOK(Integer) mapped
+    
+    PaymentService接口uri路径配置错误，接口上不能配置映射路径
+    
+    Hystrix DashBoard 监控一直loading
+    
+        执行 http://localhost:8008/hystrix.stream ping的请求数据为null
+        需要先发送一次请求

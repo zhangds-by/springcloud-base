@@ -1,8 +1,9 @@
 package com.zhangds.springcloud.service;
 
-import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan
+import org.springframework.stereotype.Component;
+
+@Component
 public class PaymentFallbackService implements PaymentService {
     @Override
     public String paymentOK(Integer id) {
